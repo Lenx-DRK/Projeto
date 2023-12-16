@@ -34,7 +34,7 @@ app.post('/fiscalGPT',async(req,res)=>{
     res.json({completion: completion.choices[0].message.content});
 
 // DEVOLUÇÃO DO PROMPT
-    res.json({seuPrompt: prompt});
+//    res.json({seuPrompt: prompt});
 })
 
 //SERVIDOR EM EXECUÇÃO NA PORTA 4000
