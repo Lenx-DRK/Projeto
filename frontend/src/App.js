@@ -7,12 +7,26 @@ function App() {
   const [selectOrig, setEstadoOrig] = useState();
   const [selectDest, setEstadoDest] = useState();
 
-  const enviarEstados = e => {
+
+  // <div className='Pesquisa' type='hidden'>
+  //   <p>Demonstre um exemplo do calculo do DIFAL de uma venda do estado do {selectOrig} para {selectDest} </p>
+  // </div>
+
+
+
+  const enviarEstados = (e) => {
+    const valores={
+      selectOrig,
+      selectDest
+    }
     e.preventDefault();
-    alert("Os estados selecionados são:" + selectOrig + selectDest);
+    console.log(valores);
   }
 
   return (
+
+
+
     <div className="cabecalhoOrig">
       <h1>Estado de Origem</h1>
 
@@ -32,7 +46,7 @@ function App() {
             <option value="Amapá"> Amapá - AP </option>,
             <option value="Amazonas"> Amazonas - AM </option>,
             <option value="Bahia"> Bahia - BA </option>,
-            <option value="Ceará"> Ceará CE </option>,
+            <option value="Ceará"> Ceará - CE </option>,
             <option value="Distrito Federal"> Distrito Federal - DF </option>,
             <option value="Espírito Santo"> Espírito Santo - ES </option>,
             <option value="Goiás"> Goiás - GO </option>,
