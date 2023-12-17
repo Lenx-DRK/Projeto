@@ -16,11 +16,11 @@ function App() {
 
   const enviarEstados = (e) => {
     const valores={
-      selectOrig,
-      selectDest
+      selectOrig: e.target.elements.selectOrig.value,
+      selectDest: e.target.elements.selectDest.value,
     }
     e.preventDefault();
-    console.log(valores);
+    console.log(valores.selectOrig + valores.selectDest)
   }
 
   return (
