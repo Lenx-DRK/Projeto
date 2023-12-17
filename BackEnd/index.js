@@ -39,4 +39,4 @@ app.post('/fiscalGPT',async(req,res)=>{
 
 //SERVIDOR EM EXECUÇÃO NA PORTA 4000
 const PORT=4000
-app.listen(PORT,()=> console.log(`Em execução na PORTA ${PORT}`));
+app.listen(PORT,()=> console.log(` BackEnd em execução na PORTA ${PORT}`));
