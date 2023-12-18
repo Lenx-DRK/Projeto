@@ -20,7 +20,7 @@ app.use(cors());
 //O POST ESTÁ DEFINIDO COMO fiscalGPT
 app.post('/fiscalGPT',async(req,res)=>{
     const {prompt} = req.body;
-    //console.log(prompt)
+    console.log(prompt)
     const model='gpt-3.5-turbo';
     const role ='user';
     const max_tokens=50;

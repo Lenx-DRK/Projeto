@@ -1,4 +1,5 @@
 //import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
 import React, { useState } from 'react'
 
@@ -13,14 +14,46 @@ function App() {
   // </div>
 
 
+  // const enviarEstados = (e) => {
+  //   e.preventDefault();
+  //   const valores={
+  //     selectOrig,
+  //     selectDest
+  //   }
+  //   console.log(valores.selectOrig + valores.selectDest)
+  // }
+
+
+
+  // function enviarEstados(){
+  // const valor = document.getElementsByName("selectOrig").value;
+  // axios.post('http://localhost:4000/fiscalGPT', { prompt: valor })
+  // console.log(valor)
+  //   .then(response=>{
+  //     console.log(response);
+  //     document.getElementById("resposta").value = response.data.completion;
+  //   })
+  //   .catch(erro=>{
+  //     console.log(erro);
+  //   });
+  // }
 
   const enviarEstados = (e) => {
-    const valores={
-      selectOrig: e.target.elements.selectOrig.value,
-      selectDest: e.target.elements.selectDest.value,
-    }
     e.preventDefault();
-    console.log(valores.selectOrig + valores.selectDest)
+    const valor = {
+      selectOrig,
+      selectDest
+    }
+    //const estado = document.getElementById(selectDest);
+    console.log(valor);
+    axios.post('http://localhost:4000/fiscalGPT', { prompt: valor })
+      .then(response => {
+        console.log(response);
+        document.getElementById("resposta").value = response.data.completion;
+      })
+      .catch(erro => {
+        console.log(erro);
+      });
   }
 
   return (
