@@ -45,8 +45,8 @@ function App() {
       selectDest
     }
     //const estado = document.getElementById(selectDest);
-    console.log(valor);
-    axios.post('http://localhost:4000/fiscalGPT', { prompt: valor })
+    console.log(valor.selectDest);
+    axios.post('http://localhost:4000/fiscalGPT', { prompt: valor.selectOrig })
       .then(response => {
         console.log(response);
         document.getElementById("resposta").value = response.data.completion;
