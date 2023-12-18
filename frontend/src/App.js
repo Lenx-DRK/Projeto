@@ -128,11 +128,10 @@ function App() {
         <button type="submit">
           Enviar
         </button>
-        {/* <input type='text' id='resposta'/> */}
         <div>
         <label>
           <p>Resultado da Pesquisa</p>
-        <textarea name='respostas' id='resposta' disabled rows={50} cols={100}/>
+        <textarea name='respostas' id='resposta' disabled rows={30} cols={100}/>
         </label>
         </div>
       </form>
