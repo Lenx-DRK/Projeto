@@ -23,7 +23,7 @@ function App() {
     //const estado = document.getElementById(selectDest);
     console.log(valor.selectDest);
     axios.post('http://localhost:4000/fiscalGPT', {
-      prompt: "Qual a formula do diferenical de aliquotas entre os estados de"
+      prompt: "Exemplifique com valores a formula do diferenical de aliquotas entre os estados de"
         + " "
         + valor.selectOrig
         + " "

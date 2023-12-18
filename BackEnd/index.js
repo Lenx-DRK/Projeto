@@ -23,7 +23,7 @@ app.post('/fiscalGPT',async(req,res)=>{
     console.log(prompt)
     const model='gpt-3.5-turbo';
     const role ='user';
-    const max_tokens=50;
+    const max_tokens=1000;
 
     //COMUNICAÇÃO COM O CHATGPT
     const completion = await openai.chat.completions.create({
