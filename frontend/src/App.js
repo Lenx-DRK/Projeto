@@ -138,8 +138,8 @@ function App() {
           Enviar
         </button>
         <br /><br />
-        <div className="form">
-            <textarea class="form-control form-control-sm mb-3" name='respostas' id='resposta' disabled rows={10} cols={0} ></textarea>
+        <div className="form text-danger border border-info">
+            <textarea class="form-control form-control-sm mb-3 border-success" name='respostas' id='resposta' disabled rows={11} cols={0} ></textarea>
             <label for="respostas">Resposta gerada pelo ChatGPT</label>
         </div>
       </form>
