@@ -22,7 +22,7 @@ function App() {
     //const estado = document.getElementById(selectDest);
     console.log(valor.selectDest);
     axios.post('http://localhost:4000/fiscalGPT', {
-      prompt: "Qual o difal entre os estados de" + " "
+      prompt: "Qual a formula do diferenical de aliquotas entre os estados de" + " "
         + valor.selectOrig + " " + "e" + " " + valor.selectDest
     })
       .then(response => {
@@ -128,7 +128,13 @@ function App() {
         <button type="submit">
           Enviar
         </button>
-        <input type='text' id='resposta'/>
+        {/* <input type='text' id='resposta'/> */}
+        <div>
+        <label>
+          <p>Resultado da Pesquisa</p>
+        <textarea name='respostas' id='resposta' disabled rows={50} cols={100}/>
+        </label>
+        </div>
       </form>
     </div>
   );
