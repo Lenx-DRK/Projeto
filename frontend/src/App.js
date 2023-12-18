@@ -13,31 +13,6 @@ function App() {
   //   <p>Demonstre um exemplo do calculo do DIFAL de uma venda do estado do {selectOrig} para {selectDest} </p>
   // </div>
 
-
-  // const enviarEstados = (e) => {
-  //   e.preventDefault();
-  //   const valores={
-  //     selectOrig,
-  //     selectDest
-  //   }
-  //   console.log(valores.selectOrig + valores.selectDest)
-  // }
-
-
-
-  // function enviarEstados(){
-  // const valor = document.getElementsByName("selectOrig").value;
-  // axios.post('http://localhost:4000/fiscalGPT', { prompt: valor })
-  // console.log(valor)
-  //   .then(response=>{
-  //     console.log(response);
-  //     document.getElementById("resposta").value = response.data.completion;
-  //   })
-  //   .catch(erro=>{
-  //     console.log(erro);
-  //   });
-  // }
-
   const enviarEstados = (e) => {
     e.preventDefault();
     const valor = {
@@ -46,7 +21,8 @@ function App() {
     }
     //const estado = document.getElementById(selectDest);
     console.log(valor.selectDest);
-    axios.post('http://localhost:4000/fiscalGPT', { prompt: valor.selectOrig })
+  axios.post('http://localhost:4000/fiscalGPT', { prompt: "Qual o difal entre os estados de"+" "
+  +valor.selectOrig+" "+"e"+" "+valor.selectDest})
       .then(response => {
         console.log(response);
         document.getElementById("resposta").value = response.data.completion;
