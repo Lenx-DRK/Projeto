@@ -21,8 +21,10 @@ function App() {
     }
     //const estado = document.getElementById(selectDest);
     console.log(valor.selectDest);
-  axios.post('http://localhost:4000/fiscalGPT', { prompt: "Qual o difal entre os estados de"+" "
-  +valor.selectOrig+" "+"e"+" "+valor.selectDest})
+    axios.post('http://localhost:4000/fiscalGPT', {
+      prompt: "Qual o difal entre os estados de" + " "
+        + valor.selectOrig + " " + "e" + " " + valor.selectDest
+    })
       .then(response => {
         console.log(response);
         document.getElementById("resposta").value = response.data.completion;
@@ -126,6 +128,7 @@ function App() {
         <button type="submit">
           Enviar
         </button>
+        <input type='text' id='resposta'/>
       </form>
     </div>
   );
