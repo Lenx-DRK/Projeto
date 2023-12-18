@@ -2,6 +2,7 @@
 import axios from 'axios';
 import './App.css';
 import React, { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
@@ -22,8 +23,13 @@ function App() {
     //const estado = document.getElementById(selectDest);
     console.log(valor.selectDest);
     axios.post('http://localhost:4000/fiscalGPT', {
-      prompt: "Qual a formula do diferenical de aliquotas entre os estados de" + " "
-        + valor.selectOrig + " " + "e" + " " + valor.selectDest
+      prompt: "Qual a formula do diferenical de aliquotas entre os estados de"
+      +" "
+      +valor.selectOrig
+      +" "
+      +"e"
+      +" "
+      +valor.selectDest
     })
       .then(response => {
         console.log(response);
@@ -72,7 +78,7 @@ function App() {
             <option value="Piauí"> Piauí - PI </option>,
             <option value="Rio de Janeiro "> Rio de Janeiro - RJ </option>,
             <option value="Rio Grande do Norte"> Rio Grande do Norte - RN</option>,
-            <option value="io Grande do Sul"> Rio Grande do Sul - RS</option>,
+            <option value="Rio Grande do Sul"> Rio Grande do Sul - RS</option>,
             <option value="Rondônia"> Rondônia - RO </option>,
             <option value="Roraima "> Roraima - RR </option>,
             <option value="Santa Catarina"> Santa Catarina - SC </option>,
@@ -125,9 +131,9 @@ function App() {
             </div>
           </div>
         </div>
-        <button type="submit">
+        <button class="btn btn-primary" type="submit">
           Enviar
-        </button>
+          </button>
         <div>
         <label>
           <p>Resultado da Pesquisa</p>
