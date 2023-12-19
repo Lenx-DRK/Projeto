@@ -135,7 +135,7 @@ function App() {
           </div>
         </div>
         
-        <button class="btn btn-primary btn-lg mb-3 bi bi-send bi-inline-text"  type="submit">
+        <button class="btn btn-primary btn-lg mb-3 bi bi-send"  type="submit">
         Enviar
         </button>
         <br /><br />
