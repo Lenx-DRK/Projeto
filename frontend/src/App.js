@@ -2,8 +2,8 @@
 import axios from 'axios';
 import './App.css';
 import React, { useState } from 'react';
-import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.css'
 
 
 
@@ -20,7 +20,7 @@ function App() {
       selectOrig,
       selectDest
     }
-    
+
     console.log(valor.selectDest);
     axios.post('http://localhost:4000/fiscalGPT', {
       prompt: "Exemplifique com valores a formula do diferenical de aliquotas, entre os estados de"
@@ -50,14 +50,14 @@ function App() {
       <form onSubmit={enviarEstados}>
 
         <div class="form-floating">
-  
 
-          <select 
-          class="form-select"
-          name="selectOrig"
-          id="eO" 
-          value={selectOrig} 
-          onChange={valorOrig => setEstadoOrig(valorOrig.target.value)}>
+
+          <select
+            class="form-select"
+            name="selectOrig"
+            id="eO"
+            value={selectOrig}
+            onChange={valorOrig => setEstadoOrig(valorOrig.target.value)}>
 
             <option selected></option>
             <option value="Acre" label='Acre - (AC)'></option>,
@@ -95,11 +95,11 @@ function App() {
             <h1>Estado de Destino</h1>
 
             <div class="form-floating">
-              
+
               <select class="form-select" id='eS' aria-label='Exemplo'
-               name="selectDest" 
-               value={selectDest} 
-               onChange={valorDest => setEstadoDest(valorDest.target.value)}>
+                name="selectDest"
+                value={selectDest}
+                onChange={valorDest => setEstadoDest(valorDest.target.value)}>
 
                 <option selected></option>
                 <option value="Acre" label='Acre - (AC)'></option>,
@@ -134,16 +134,16 @@ function App() {
             </div>
           </div>
         </div>
-        
-        <button class="btn btn-primary btn-lg mb-3 bi bi-send"  type="submit">
-        Enviar
-        </button>
+
+        <button class="btn btn-primary btn-lg" type="submit">
+          <i class="fa-solid fa-sharp fa-paper-plane fa-fade">
+          </i> Consultar</button>
         <br /><br />
-        
+
         <div className="form text-danger border border-info">
-            <textarea class="form-control form-control-sm mb-3 border-success" name='respostas' id='resposta' 
+          <textarea class="form-control form-control-sm mb-3 border-success" name='respostas' id='resposta'
             disabled rows={11} cols={0} ></textarea>
-            <label for="respostas">Resposta gerada pelo ChatGPT</label>
+          <label for="respostas">Resposta gerada pelo ChatGPT</label>
         </div>
       </form>
     </div>
