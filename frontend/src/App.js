@@ -1,8 +1,11 @@
 //import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
-import React, { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import React, { useState } from 'react';
+import "bootstrap-icons/font/bootstrap-icons.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function App() {
 
@@ -10,9 +13,6 @@ function App() {
   const [selectDest, setEstadoDest] = useState();
 
 
-  // <div className='Pesquisa' type='hidden'>
-  //   <p>Demonstre um exemplo do calculo do DIFAL de uma venda do estado do {selectOrig} para {selectDest} </p>
-  // </div>
 
   const enviarEstados = (e) => {
     e.preventDefault();
@@ -20,10 +20,10 @@ function App() {
       selectOrig,
       selectDest
     }
-    //const estado = document.getElementById(selectDest);
+    
     console.log(valor.selectDest);
     axios.post('http://localhost:4000/fiscalGPT', {
-      prompt: "Exemplifique com valores a formula do diferenical de aliquotas entre os estados de"
+      prompt: "Exemplifique com valores a formula do diferenical de aliquotas, entre os estados de"
         + " "
         + valor.selectOrig
         + " "
@@ -50,7 +50,7 @@ function App() {
       <form onSubmit={enviarEstados}>
 
         <div class="form-floating">
-          {/* <label>Estado de Origem: </label> */}
+  
 
           <select 
           class="form-select"
@@ -95,7 +95,7 @@ function App() {
             <h1>Estado de Destino</h1>
 
             <div class="form-floating">
-              {/* <label>Estado de Destino: </label> */}
+              
               <select class="form-select" id='eS' aria-label='Exemplo'
                name="selectDest" 
                value={selectDest} 
@@ -134,12 +134,15 @@ function App() {
             </div>
           </div>
         </div>
-        <button class="btn btn-primary btn-lg mb-3"  type="submit">
-          Enviar
+        
+        <button class="btn btn-primary btn-lg mb-3 bi bi-send bi-inline-text"  type="submit">
+        Enviar
         </button>
         <br /><br />
+        
         <div className="form text-danger border border-info">
-            <textarea class="form-control form-control-sm mb-3 border-success" name='respostas' id='resposta' disabled rows={11} cols={0} ></textarea>
+            <textarea class="form-control form-control-sm mb-3 border-success" name='respostas' id='resposta' 
+            disabled rows={11} cols={0} ></textarea>
             <label for="respostas">Resposta gerada pelo ChatGPT</label>
         </div>
       </form>
